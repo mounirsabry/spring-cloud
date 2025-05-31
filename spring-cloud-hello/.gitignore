@@ -1,7 +1,3 @@
-# Free office text maker
-notes.tmdx
-notes.bak
-
 target/
 log/
 !.mvn/wrapper/maven-wrapper.jar
