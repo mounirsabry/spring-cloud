@@ -29,11 +29,17 @@ public class BookController {
 
     @GetMapping
     ResponseEntity<List<BookDTO>> getAll(@Nullable @RequestBody List<Long> ids) {
+        List<BookDTO> result;
+        System.out.println("Ids: " + ids);
+        
         if (ids == null) {
-            return ResponseEntity.ok(bookService.getAllBooks());
+            result = bookService.getAllBooks();
+        } else {
+            result = bookService.getAllBooks(ids);
         }
 
-        return ResponseEntity.ok(bookService.getAllBooks(ids));
+        System.out.println("Book List: " + result);
+        return ResponseEntity.ok(result);
     }
     
     @GetMapping("/{bookId}")

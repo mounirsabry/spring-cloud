@@ -1,20 +1,18 @@
 package jets.spring_boot.client;
 
 import jets.spring_boot.model.dto.BookDTO;
-import jets.spring_boot.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
+import jets.spring_boot.service.BookServiceOld;
 
-@Service
-public class BookServiceProxy implements BookService {
+public class BookServiceProxy implements BookServiceOld {
 
     private final RestTemplate restTemplate;
     private final String baseUrl;

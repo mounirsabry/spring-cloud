@@ -13,7 +13,7 @@ public class Book {
     @Column(name = "book_id")
     private Long bookId;
 
-    @Column(nullable = false)
+ //   @Column(nullable = false)
     private String title;
     
     public Book() {}

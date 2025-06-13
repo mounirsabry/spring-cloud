@@ -5,17 +5,20 @@ import jets.spring_boot.model.entities.CartItem;
 import jets.spring_boot.model.entities.User;
 import jets.spring_boot.repo.CartItemRepo;
 import jets.spring_boot.repo.UserRepo;
-import jets.spring_boot.service.BookService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
+import jets.spring_boot.service.BookService;
 
 @SpringBootApplication
+@EnableDiscoveryClient
+@EnableFeignClients
 public class WebApplication {
 
 	public static void main(String[] args) {
@@ -23,11 +26,7 @@ public class WebApplication {
 	}
 
 	@Bean
-	public RestTemplate restTemplate() {
-		return new RestTemplate();
-	}
-
-	@Bean
+    @SuppressWarnings("unused")
 	CommandLineRunner insertTestDataRunner(
 			UserRepo userRepo,
 			BookService bookService,

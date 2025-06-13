@@ -6,7 +6,6 @@ import jets.spring_boot.model.dto.CartItemDTO;
 import jets.spring_boot.model.entities.CartItem;
 import jets.spring_boot.model.mappers.CartMapper;
 import jets.spring_boot.repo.CartItemRepo;
-import jets.spring_boot.service.BookService;
 import jets.spring_boot.service.CartService;
 import jets.spring_boot.utils.DataValidator;
 import org.springframework.stereotype.Service;
@@ -14,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
+import jets.spring_boot.service.BookService;
 
 @Service
 public class CartServiceImpl implements CartService {
